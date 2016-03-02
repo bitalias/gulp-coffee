@@ -22,7 +22,7 @@
 var coffee = require('gulp-coffee');
 
 gulp.task('coffee', function() {
-  gulp.src('./src/*.coffee')
+  gulp.src('./src/*.iced')
     .pipe(coffee({bare: true}).on('error', gutil.log))
     .pipe(gulp.dest('./public/'));
 });
@@ -59,7 +59,7 @@ Since `.on(...)` returns `this`, you can compact it as inline code:
 
 ```javascript
 
-gulp.src('./src/*.coffee')
+gulp.src('./src/*.iced')
   .pipe(coffee({bare: true}).on('error', gutil.log))
   // ...
 ```
@@ -75,7 +75,7 @@ gulp-coffee can be used in tandem with [gulp-sourcemaps](https://github.com/flor
 ```javascript
 var sourcemaps = require('gulp-sourcemaps');
 
-gulp.src('./src/*.coffee')
+gulp.src('./src/*.iced')
   .pipe(sourcemaps.init())
   .pipe(coffee())
   .pipe(sourcemaps.write())
@@ -89,7 +89,7 @@ By default, [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) write
 ```javascript
 var sourcemaps = require('gulp-sourcemaps');
 
-gulp.src('./src/*.coffee')
+gulp.src('./src/*.iced')
   .pipe(sourcemaps.init())
   .pipe(coffee({ bare: true })).on('error', gutil.log)
   .pipe(sourcemaps.write('./maps'))
